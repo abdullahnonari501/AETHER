@@ -19,7 +19,7 @@ GPS is trivially jammed or spoofed, which makes GPS-dependent autonomy useless e
 
 **Sequential 20 Hz sense → decide → act loop** on the Jetson Nano, commanding ArduCopter GUIDED mode over MAVLink.
 
-> ⚠️ **Honest note:** an interim progress report describes a multi-threaded producer-consumer design. The flown code is deliberately a *sequential* loop. At 20 Hz with a ~270 ms end-to-end latency budget, threading added concurrency risk and debugging complexity with no meaningful latency benefit at this scale. The design evolved during implementation; this repository — the code — is the source of truth.
+> The flown code is deliberately a *sequential* loop. At 20 Hz with a ~270 ms end-to-end latency budget, threading added concurrency risk and debugging complexity with no meaningful latency benefit at this scale. The design evolved during implementation; this repository — the code — is the source of truth.
 
 ```
 Camera (640×480) ──► YOLOv8-Nano (Docker, Ultralytics) ──► Detections
